@@ -2,6 +2,7 @@ from flask import Blueprint
 
 health_bp = Blueprint("health", __name__)
 
+
 @health_bp.get("/")
 def home():
     return {
@@ -10,8 +11,7 @@ def home():
         "backend": "Flask",
     }
 
-    @health_bp.get("/health")
-    def health_check():
-        return {"status": "healthy"},200
 
-        
+@health_bp.get("/health")
+def health_check():
+    return {"status": "healthy"}, 200
