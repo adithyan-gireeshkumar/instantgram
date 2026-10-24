@@ -6,15 +6,17 @@ def create_app():
     load_dotenv()
 
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'development_only_change_me')
+    app.config["SECRET_KEY"] = os.getenv(
+        "SECRET_KEY",
+        "development-only-change-me",
+    )
 
-    @app.get('/')
+    @app.get("/")
     def home():
-        return {"application " : "Social ai agent",
-                "status" : "running",
-                "backend" : "flask",
-                }
+        return {
+            "application": "Instantgram",
+            "status": "running",
+            "backend": "Flask",
+        }
 
-                return app
-
-                
+        return app
