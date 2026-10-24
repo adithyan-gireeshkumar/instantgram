@@ -1,6 +1,8 @@
-from flask import Flask
-from dotenv import load_dotenv
 import os
+
+from dotenv import load_dotenv
+from flask import Flask
+
 
 def create_app():
     load_dotenv()
@@ -19,4 +21,4 @@ def create_app():
             "backend": "Flask",
         }
 
-        return app
+    return app
