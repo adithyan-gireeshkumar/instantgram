@@ -1,7 +1,10 @@
+
 import os
 
 from dotenv import load_dotenv
 from flask import Flask
+
+from app.routes.health import health_bp
 
 
 def create_app():
@@ -13,12 +16,6 @@ def create_app():
         "development-only-change-me",
     )
 
-    @app.get("/")
-    def home():
-        return {
-            "application": "Instantgram",
-            "status": "running",
-            "backend": "Flask",
-        }
+    app.register_blueprint(health_bp)
 
     return app
